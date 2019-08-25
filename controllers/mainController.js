@@ -8,7 +8,6 @@ const requestChecker = require('../middleware/requestChecker');
 // apiParams (Body) startDate {Date}, endDate {Date}, minCount {Number}, maxCount {Number}
 router.post('/findRecords', requestChecker.verifyParams, requestChecker.verifyTypes, (req, res) => {
   var { startDate, endDate, minCount, maxCount } = req.body;
-  console.log(req.body);
   // Aggregating query with params
   Record.aggregate([
     // This query for calculating sum of counts
