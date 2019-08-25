@@ -3,7 +3,6 @@ const mongoose = require('mongoose');
 module.exports = {
   mongoose,
   connect: () => {
-    console.log(process.env.MONGO_URI);
     mongoose.Promise = Promise;
     mongoose
       .connect(process.env.MONGO_URI, {

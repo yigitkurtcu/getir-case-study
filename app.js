@@ -7,9 +7,10 @@ require('dotenv').config();
 const mainController = require('./controllers/mainController');
 const errorHandler = require('./helpers/errorHandler');
 
-db.connect();
+db.connect(); // Database connection
 app.use(logger('dev'));
-app.use(express.json());
+app.use(express.json()); // JSON parser
+// Body Parser
 app.use(
   express.urlencoded({
     extended: false
